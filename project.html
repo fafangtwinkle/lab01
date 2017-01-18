@@ -1,103 +1,17 @@
-<script language="Javascript1.2">
-var butterflypath="butterfly.gif" //ตำแหน่งที่เก็บรูป butterfly.gif
-var speed=200;    //SPEED IN MILLISECONDS.
-var change=800;   //TIME BETWEEN DIRECTION CHANGES IN MILLISECONDS. 
-var xmax=15;      //MAX NUMBER OF PIXEL STEPS LEFT OR RIGHT.        
-var ymax=15;      //MAX NUMBER OF PIXEL STEPS UP OR DOWN.
-
-var isNS=(navigator.appName=="Netscape");
-var _all='all.';
-var _style='.style';
-var _visible='visible';
-var w_x, w_y, x, y, tx, ty, xo, yo, img1;
-var incrx=2;
-var incry=8;
-var xdir=true;
-var ydir=true;
-if(isNS){
-_all='';
-_style='';
-_visible='show';
-}
-
-function init(){
-img1=eval('document.'+_all+'img1'+_style);
-resize();
-moveimg(w_x/2,w_y/2);
-img1.visibility=_visible;
-animate();
-changedirs();
-regenerate2();
-}
-
-function resize(){
-if(isNS){
-w_x=window.innerWidth-document.img1.document.width;
-w_y=window.innerHeight-document.img1.document.height;
-}else{
-w_x=document.body.clientWidth-document.image1.width;
-w_y=document.body.clientHeight-document.image1.height;
-}}
-
-function changedirs(){
-xdir=(Math.floor(Math.random()*2)==0);
-ydir=(Math.floor(Math.random()*2)==0);
-incrx=Math.floor(Math.random()*xmax);
-incry=Math.floor(Math.random()*ymax);
-setTimeout('changedirs()',change);
-}
-
-function animate(){
-if(isNS){
-tx=img1.left;
-ty=img1.top;
-xo=pageXOffset;
-yo=pageYOffset;
-}else{
-tx=img1.pixelLeft;
-ty=img1.pixelTop;
-xo=document.body.scrollLeft;
-yo=document.body.scrollTop;
-}
-if(ydir){
-if((ty+incry)>(w_y+yo)){ ydir=false; moveimg(0,-incry); }else{ moveimg(0,incry); }
-}else{
-if((ty-incry)<yo){ ydir=true; moveimg(0,incry); }else{ moveimg(0,-incry); }
-}
-if(xdir){
-if((tx+incrx)>(w_x+xo)){ xdir=false; moveimg(-incrx,0); }else{ moveimg(incrx,0); }
-}else{
-if((tx-incrx)<xo){ xdir=true; moveimg(incrx,0); }else{ moveimg(-incrx,0); }
-}
-setTimeout('animate()',speed);
-}
-
-function moveimg(dx,dy){
-if(isNS){
-img1.moveBy(dx,dy);
-}else{
-img1.pixelTop+=dy;
-img1.pixelLeft+=dx;
-}}
-
-function hidebutterfly(){
-if (document.all)
-document.all.img1.style.visibility="hidden"
-else if (document.layers)
-document.img1.visibility="hide"
-}
-
-function regenerate(){
-window.location.reload()
-}
-function regenerate2(){
-if (document.layers)
-setTimeout("window.onresize=regenerate",400)
-}
-
-if (document.all)
-window.onresize=resize
-
-window.onload=init
-
-</script>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body bgcolor="lightpink">
+    
+  <center>
+    <p><b><i><u><font size="7"> สมุนไพรหรรษา.. </font></u> </i></b></p>
+    <br>
+    <td bgcolor="#D5DBDB"><div align="center"><a href="http://kartoon.club/126">"5555.png" width="200" height="300">
+    <img src="fang.jpg" width="250" height="320">
+    <br>
+    <p><b><font size="5">  My name is Rutchadaporn Vareephop   </font></b></p>
+<p><b><i><u><font size="5">  You can call me "Fang"    </font></u> </i></b></p>
+<p><b><font size="3">  contact:58660088@go.buu.ac.th  </font></b></p>
+<p><b><font size="3">  Fb:Fafang twinkle  </font></b></p>
+<p><b><font size="3">  Tel:0900768761  </font></b></p>
